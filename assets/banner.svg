@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a11" />
+    </linearGradient>
+
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.3" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Filters for Glow & Shadows -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(1deg); }
+      }
+      @keyframes floatReverse {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(8px) rotate(-1deg); }
+      }
+      @keyframes pulseBeam {
+        0%, 100% { stroke-dashoffset: 0; opacity: 0.35; }
+        50% { stroke-dashoffset: -40; opacity: 0.85; }
+      }
+      @keyframes orbPulse {
+        0%, 100% { transform: scale(1); opacity: 0.25; }
+        50% { transform: scale(1.15); opacity: 0.45; }
+      }
+      @keyframes dashMovement {
+        from { stroke-dashoffset: 100; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      .bg-grid { opacity: 0.12; }
+      .ambient-orb { transform-origin: center; animation: orbPulse 8s ease-in-out infinite; }
+      .float-card-left { animation: floatSlow 7s ease-in-out infinite; transform-origin: center; }
+      .float-card-right { animation: floatReverse 6.5s ease-in-out infinite; transform-origin: center; }
+      .signal-line { stroke-dasharray: 8 6; animation: dashMovement 12s linear infinite; }
+      .main-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 800; }
+      .sub-text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+
+  <!-- Deep Tech Background -->
+  <rect width="1200" height="360" fill="url(#bg-grad)" rx="16" />
+
+  <!-- Ambient Glow Orbs in Background -->
+  <circle cx="200" cy="80" r="140" fill="#6366f1" class="ambient-orb" filter="url(#glow)" />
+  <circle cx="1020" cy="280" r="130" fill="#ec4899" class="ambient-orb" filter="url(#glow)" style="animation-delay: -3s;" />
+  <circle cx="950" cy="70" r="90" fill="#06b6d4" class="ambient-orb" filter="url(#glow)" style="animation-delay: -5s;" />
+
+  <!-- Grid Overlay for Security & Architecture Vibe -->
+  <g class="bg-grid" stroke="#94a3b8" stroke-width="1">
+    <line x1="0" y1="60" x2="1200" y2="60" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="180" x2="1200" y2="180" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="150" y1="0" x2="150" y2="360" />
+    <line x1="300" y1="0" x2="300" y2="360" />
+    <line x1="450" y1="0" x2="450" y2="360" />
+    <line x1="600" y1="0" x2="600" y2="360" />
+    <line x1="750" y1="0" x2="750" y2="360" />
+    <line x1="900" y1="0" x2="900" y2="360" />
+    <line x1="1050" y1="0" x2="1050" y2="360" />
+  </g>
+
+  <!-- Subtle Dynamic Connection Stream Lines in Background (Lower z-order) -->
+  <path d="M 60 290 Q 250 320 400 290 T 800 300 T 1140 280" fill="none" stroke="url(#primary-glow)" stroke-width="2" class="signal-line" opacity="0.4" />
+  <path d="M 60 70 Q 300 40 550 70 T 950 50 T 1140 80" fill="none" stroke="#06b6d4" stroke-width="1.5" class="signal-line" opacity="0.3" style="animation-duration: 9s;" />
+
+  <!-- Background Floating Side Accents (Safe Margin: Left side, outside central title) -->
+  <g class="float-card-left" filter="url(#soft-shadow)">
+    <rect x="50" y="80" width="130" height="42" rx="10" fill="url(#card-grad)" stroke="#6366f1" stroke-width="1.2" />
+    <circle cx="68" cy="101" r="5" fill="#10b981" />
+    <text x="82" y="106" fill="#e2e8f0" font-size="12" font-family="-apple-system, sans-serif" font-weight="600">SCIM 2.0</text>
+  </g>
+
+  <g class="float-card-left" filter="url(#soft-shadow)" style="animation-delay: -2s;">
+    <rect x="40" y="220" width="145" height="42" rx="10" fill="url(#card-grad)" stroke="#8b5cf6" stroke-width="1.2" />
+    <circle cx="58" cy="241" r="5" fill="#6366f1" />
+    <text x="72" y="246" fill="#e2e8f0" font-size="12" font-family="-apple-system, sans-serif" font-weight="600">JML Lifecycle</text>
+  </g>
+
+  <!-- Background Floating Side Accents (Safe Margin: Right side, outside central title) -->
+  <g class="float-card-right" filter="url(#soft-shadow)">
+    <rect x="1010" y="80" width="145" height="42" rx="10" fill="url(#card-grad)" stroke="#ec4899" stroke-width="1.2" />
+    <circle cx="1028" cy="101" r="5" fill="#ec4899" />
+    <text x="1042" y="106" fill="#e2e8f0" font-size="12" font-family="-apple-system, sans-serif" font-weight="600">RBAC / ABAC</text>
+  </g>
+
+  <g class="float-card-right" filter="url(#soft-shadow)" style="animation-delay: -3.5s;">
+    <rect x="1015" y="220" width="140" height="42" rx="10" fill="url(#card-grad)" stroke="#06b6d4" stroke-width="1.2" />
+    <circle cx="1033" cy="241" r="5" fill="#06b6d4" />
+    <text x="1047" y="246" fill="#e2e8f0" font-size="12" font-family="-apple-system, sans-serif" font-weight="600">Enterprise IGA</text>
+  </g>
+
+  <!-- FOREGROUND: High Contrast Crisp Typography (Never obstructed) -->
+  <!-- Top Badge / Category Pill -->
+  <g transform="translate(450, 48)">
+    <rect x="0" y="0" width="300" height="30" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="1" opacity="0.9" />
+    <circle cx="16" cy="15" r="4" fill="#38bdf8" />
+    <text x="30" y="20" fill="#38bdf8" font-size="11" font-family="-apple-system, sans-serif" font-weight="700" letter-spacing="1.2">CURATED ECOSYSTEM DIRECTORY</text>
+  </g>
+
+  <!-- Main Repository Title -->
+  <text x="600" y="135" text-anchor="middle" class="main-title" font-size="34" fill="#ffffff" filter="url(#soft-shadow)" letter-spacing="-0.5">
+    Awesome User Provisioning &amp; Role Management
+  </text>
+
+  <!-- Gradient Subtitle Bar -->
+  <text x="600" y="172" text-anchor="middle" class="sub-text" font-size="16" fill="url(#primary-glow)" font-weight="600" letter-spacing="0.5">
+    Identity Lifecycle Automation • SCIM 2.0 • RBAC &amp; ABAC Governance • Self-Hosted IAM / IGA
+  </text>
+
+  <!-- Descriptive Tagline -->
+  <text x="600" y="208" text-anchor="middle" class="sub-text" font-size="13.5" fill="#94a3b8" letter-spacing="0.2">
+    The definitive reference guide to enterprise identity providers, automated joiner-mover-leaver workflows,
+  </text>
+  <text x="600" y="228" text-anchor="middle" class="sub-text" font-size="13.5" fill="#94a3b8" letter-spacing="0.2">
+    SaaS lifecycle orchestrators, and battle-tested open-source access management platforms.
+  </text>
+
+  <!-- Feature Tags / Pills at Bottom of Center -->
+  <g transform="translate(310, 268)">
+    <!-- Pill 1 -->
+    <rect x="0" y="0" width="130" height="28" rx="14" fill="#1e1e38" stroke="#6366f1" stroke-width="1" />
+    <text x="65" y="18" text-anchor="middle" fill="#c7d2fe" font-size="11" font-family="-apple-system, sans-serif" font-weight="600">⚡ Automated JML</text>
+
+    <!-- Pill 2 -->
+    <rect x="145" y="0" width="140" height="28" rx="14" fill="#2d1537" stroke="#ec4899" stroke-width="1" />
+    <text x="215" y="18" text-anchor="middle" fill="#fbcfe8" font-size="11" font-family="-apple-system, sans-serif" font-weight="600">🛡️ Least Privilege</text>
+
+    <!-- Pill 3 -->
+    <rect x="300" y="0" width="135" height="28" rx="14" fill="#162c3b" stroke="#06b6d4" stroke-width="1" />
+    <text x="367" y="18" text-anchor="middle" fill="#bae6fd" font-size="11" font-family="-apple-system, sans-serif" font-weight="600">🌐 RFC SCIM 2.0</text>
+
+    <!-- Pill 4 -->
+    <rect x="450" y="0" width="130" height="28" rx="14" fill="#132e27" stroke="#10b981" stroke-width="1" />
+    <text x="515" y="18" text-anchor="middle" fill="#a7f3d0" font-size="11" font-family="-apple-system, sans-serif" font-weight="600">📜 SOC 2 / IGA</text>
+  </g>
+
+  <!-- Sleek Bottom Border Highlight -->
+  <rect x="150" y="356" width="900" height="4" rx="2" fill="url(#primary-glow)" />
+</svg>

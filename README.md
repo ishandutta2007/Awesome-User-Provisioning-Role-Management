@@ -1,223 +1,151 @@
-# Awesome-User-Provisioning-Role-Management
+# 🔐 Awesome User Provisioning & Role Management
 
-## Top User Provisioning & Role Management Ecosystem
+<div align="center">
 
+![Awesome User Provisioning & Role Management Banner](./assets/banner.svg)
 
+<p align="center">
+  <strong>Curated Directory of Identity Lifecycle Automation, SCIM 2.0 Provisioning, RBAC/ABAC Governance & Self-Hosted IAM Solutions</strong>
+</p>
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-User-Provisioning-Role-Management/graphs/commit-activity)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-User-Provisioning-Role-Management/blob/main/README.md#how-to-contribute)
 
-*Focused on Identity Lifecycle Automation, SCIM Provisioning & Self-Hosted IGA*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **User Provisioning & Role Management**. These tools enable organizations to automate the joiner-mover-leaver lifecycle—creating, updating, and revoking user access across applications based on HR data and role definitions—while enforcing least privilege and maintaining audit trails for compliance.
-
-
-
-**Examples** include HubSpot Account and User Management, Okta, Microsoft Entra ID, OneLogin, JumpCloud, SailPoint, Ping Identity, CyberArk, Lumos, and Rippling (the category leaders).
-
-
-
-**Open-source emphasis**: User Provisioning & Role Management is a domain where open-source tooling is **mature at the IAM and SCIM layers but requires assembly for full lifecycle automation**. **WSO2 Identity Server** and **Keycloak** provide production-grade IAM with RBAC, SCIM 2.0, and SSO—WSO2 is recognized as a Digital Public Good under Apache 2.0 , and Keycloak is the most widely adopted open-source IAM platform. **midPoint (Evolveum)** is the strongest open-source IGA (Identity Governance and Administration) tool, explicitly recommended for identity provisioning, automated processes, role/org-unit definition, and high-volume data handling . For SCIM-specific provisioning, **GoSCIM** provides a lightweight, RFC 7643/7644-compliant SCIM 2.0 server in Go . The critical gap: **no open-source project replicates the turnkey HR-to-app lifecycle automation** of Okta or Rippling—those require building the orchestrator and connectors yourself, as demonstrated by the MIT-licensed **hr-onboarding-automation** reference project that wires BambooHR → Google Workspace/Entra ID/Slack/Jira with YAML role templates and audit logs .
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-products)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[HubSpot Account and User Management](https://www.hubspot.com/)**  
-
-  Native user management within HubSpot; assign roles (Super Admin, Marketing, Sales, Service, etc.) and permissions per user, with SSO support on higher tiers. Focused on HubSpot-internal access rather than cross-application provisioning.
-
-
-
-- **[Okta](https://www.okta.com/)**  
-
-  Leading identity cloud with Universal Directory, SSO, MFA, **Lifecycle Management** (automated provisioning/deprovisioning via SCIM and HR-driven workflows), and Identity Governance for access certifications. The benchmark for turnkey user provisioning across thousands of app integrations.
-
-
-
-- **[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/microsoft-entra)**  
-
-  Microsoft's cloud identity service with **Lifecycle Workflows** (joiner/mover/leaver automation triggered by HR events), entitlement management, access reviews, and provisioning to SaaS apps via SCIM. Deep integration with Microsoft 365 and Azure.
-
-
-
-- **[OneLogin](https://www.onelogin.com/)**  
-
-  Identity and access management platform with SSO, MFA, and user provisioning (now part of One Identity); provides app catalog and automated lifecycle workflows.
-
-
-
-- **[JumpCloud](https://jumpcloud.com/)**  
-
-  Cloud directory platform with SSO, device management, LDAP, and **Directory-as-a-Service** lifecycle management; automates user onboarding/offboarding across connected systems.
-
-
-
-- **[SailPoint](https://www.sailpoint.com/)**  
-
-  Identity governance and administration (IGA) leader with access certification, role mining, lifecycle management, and compliance reporting. The enterprise standard for governance-heavy provisioning.
-
-
-
-- **[Ping Identity](https://www.pingidentity.com/)**  
-
-  Identity platform (now merged with ForgeRock) with AI-driven IGA, lifecycle management, and fraud/risk protection; PingOne for Workforce includes provisioning and governance capabilities .
-
-
-
-- **[CyberArk](https://www.cyberark.com/)**  
-
-  Identity security platform with privileged access management (PAM) and identity governance; protects privileged accounts and enforces least privilege across provisioning workflows.
-
-
-
-- **[Lumos](https://www.lumos.com/)**  
-
-  Identity governance platform focused on **app access requests, approvals, and automated provisioning**; positioned for mid-market companies wanting Okta-like governance without full IGA complexity.
-
-
-
-- **[Rippling](https://www.rippling.com/)**  
-
-  Unified HR/IT platform with **Identity and Access Management** built on a single Employee Graph; automates onboarding/offboarding and enforces role-based access across 650+ integrations.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Full IAM Platforms with Provisioning
-
-
-
-- **[WSO2 Identity Server](https://github.com/wso2/product-is)**  
-
-  Open-source IAM platform (Apache-2.0) recognized as a **Digital Public Good** ; supports OAuth2, OIDC, SAML, **SCIM 2.0**, FIDO2, adaptive MFA, and **role-based access control** with user management. Manages over 1 billion identities across 1,500+ commercial deployments. **The most enterprise-ready open-source IAM foundation** for provisioning and SSO—but it is an identity server, not an HR-driven lifecycle orchestrator.
-
-
-
-- **[Keycloak](https://github.com/keycloak/keycloak)**  
-
-  The most widely adopted open-source IAM platform (Apache-2.0); provides SSO, OAuth 2.0, OIDC, SAML, LDAP, **RBAC**, and **SCIM 2.0 server support (since 26.8)** for receiving users from Entra ID or Okta . User federation and identity brokering included. **The default choice for self-hosted IAM**—but provisioning workflows beyond SCIM ingestion require custom development or integration with midPoint.
-
-
-
-- **[Casdoor](https://github.com/casdoor/casdoor)**  
-
-  UI-first open-source IAM/SSO platform (Apache-2.0) with OAuth 2.0, OIDC, SAML, CAS, LDAP, and **RBAC**; includes **SCIM 2.0 server** (users and groups) and built-in **MCP server** for AI agent access . Supports 70+ social/enterprise identity providers. **Developer-friendly** for smaller teams wanting a clean admin UI.
-
-
-
-- **[Hanzo IAM](https://github.com/hanzoai/iam)**  
-
-  Open-source, AI-first IAM with web UI (Apache-2.0); supports OAuth 2.1, OIDC, SAML, CAS, LDAP, **SCIM provisioning**, WebAuthn, MFA, RBAC, and multi-tenancy . **Notable for MCP/A2A gateway** for AI agent access control. A modern alternative for teams building AI-augmented identity workflows.
-
-
-
-### Identity Governance & Administration (IGA)
-
-
-
-- **[midPoint (Evolveum)](https://github.com/Evolveum/midpoint)**  
-
-  The leading open-source **Identity Governance and Administration (IGA)** platform (Apache-2.0), explicitly recommended for **identity provisioning, automated processes, role/organizational unit definition, and high-volume data processing** . Supports SCIM 2.0 provisioning, access certification, and governance aligned with NIS2/GDPR. **The strongest open-source IGA option** for organizations needing SailPoint-equivalent governance—but requires expertise to deploy and configure.
-
-
-
-### SCIM Provisioning Servers
-
-
-
-- **[GoSCIM](https://github.com/arturoeanton/goscim)**  
-
-  Lightning-fast **SCIM 2.0 server** in Go (RFC 7643/7644 compliant) ; features dynamic schema loading (add resource types via JSON, no code), per-attribute permissions, OAuth 2.0/Basic auth, ETag concurrency control, and Couchbase backend. **Limitations**: no Bulk operations, no value-path filters, no password hashing (password stored as sent) . **The best lightweight SCIM server** for building custom provisioning endpoints—pair with an orchestrator for lifecycle automation.
-
-
-
-### Lifecycle Automation References
-
-
-
-- **[hr-onboarding-automation](https://github.com/suresh-1001/hr-onboarding-automation)**  
-
-  MIT-licensed **HR-triggered provisioning reference implementation** (Python) . Wires BambooHR/Paylocity/HiBob → Google Workspace or Entra ID/Intune → Slack (SCIM or Invite API) → Jira/Confluence with **YAML role templates** for least privilege by default. Includes full audit logging (JSON + signed daily digest) for PCI DSS 7.x/8.x and SOC 2 CC6.x compliance. Offboarding workflow handles disable → ownership transfer → token revocation. **The clearest open-source blueprint** for building HR-to-app lifecycle automation—but it is a reference project, not a maintained platform.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Apache Syncope** — Open-source IGA platform (Apache 2.0) for identity provisioning, synchronization, and governance; evaluated alongside midPoint for enterprise identity management .
-
-- **Nubus** — Modular open-source IAM (AGPL-3.0) for centralized user/role/permission management with SSO, self-service, and packaged integrations; used by European public sector organizations .
-
-- **Axia** — Self-hosted LDAP admin web console and REST API for Active Directory/OpenLDAP (MIT); features role-based access (Admin, UserCreator, UserEditor, UserDeleter) and audit logging . **LDAP-focused**—useful for directory management, not cross-app provisioning.
-
-
-
-**Frameworks for building custom systems**: For **IAM with SCIM ingestion and SSO**, Keycloak or WSO2 Identity Server . For **IGA with provisioning workflows**, midPoint . For **lightweight SCIM endpoints**, GoSCIM . For **HR-triggered lifecycle automation**, use hr-onboarding-automation as a reference pattern  and pair it with a SCIM server. No open-source project provides the **turnkey HR-to-app orchestration with pre-built connectors** of Okta or Rippling—that requires assembling an orchestrator, SCIM servers, and app connectors.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- User provisioning platforms handling identity data must comply with applicable privacy regulations (GDPR, CCPA) and security frameworks (SOC 2, ISO 27001); **improper deprovisioning leaves orphaned accounts that create breach risk**.
-
-- **Open-source user provisioning is mature at the IAM/SCIM layer**—WSO2 Identity Server, Keycloak, and midPoint provide production-grade identity and governance capabilities . However, **no open-source project replicates the turnkey HR-driven lifecycle automation** of Okta or Rippling with pre-built connectors for hundreds of apps. Organizations requiring full lifecycle automation should evaluate commercial platforms or invest in custom orchestration (using hr-onboarding-automation as a starting reference ).
-
-- Verify license terms for commercial use; WSO2 uses Apache-2.0 , Keycloak uses Apache-2.0, GoSCIM is open-source (check repository) , and hr-onboarding-automation uses MIT .
-
-
+</div>
 
 ---
 
+## 📑 Table of Contents
+- [📌 Overview & Architecture](#-overview--architecture)
+- [📊 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🏢 SaaS & Hosted Identity Platforms](#-saas--hosted-identity-platforms)
+- [💻 Open-Source Identity & Governance Repositories](#-open-source-identity--governance-repositories)
+- [🛠️ Architectural Patterns: Building vs. Buying](#-architectural-patterns-building-vs-buying)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [⚖️ Disclaimer & Security Advisory](#-disclaimer--security-advisory)
 
+---
 
-**Made for identity architects, IT administrators, security engineers, and HR operations teams.**  
+## 📌 Overview & Architecture
 
-Let's make user provisioning more open, but with clear eyes about the connector ecosystem and lifecycle orchestration that commercial platforms still own.
+User Provisioning and Role Management is the critical operational layer of **Identity & Access Management (IAM)** and **Identity Governance and Administration (IGA)**. It automates the **Joiner-Mover-Leaver (JML)** lifecycle:
+- 🟢 **Joiner**: Automatically provisioning accounts, directory profiles, and default role-based entitlements across cloud applications as soon as an employee is added in the HR Information System (HRIS).
+- 🔄 **Mover**: Detecting department, team, or positional changes in HR records and adjusting fine-grained permissions, application licenses, and security group memberships.
+- 🔴 **Leaver**: Instantly revoking SSO sessions, OAuth tokens, and provisioned user accounts across all internal and third-party SaaS services upon termination to eliminate orphaned credentials.
+
+Modern systems rely heavily on the **RFC 7643 & RFC 7644 (SCIM 2.0 - System for Cross-domain Identity Management)** protocol to push and synchronize identity records reliably between identity providers (IdPs) and downstream service providers (SPs).
+
+---
+
+## 📊 Sector Overview & Market Dynamics
+
+> 📈 **Market Size & Trajectory**: The global Identity and Access Management (IAM) and Identity Governance and Administration (IGA) sector is estimated at **$18.5 Billion in 2024** and projected to surpass **$42 Billion by 2031**, expanding at a robust compound annual growth rate (**CAGR**) of **13.5%**. Growth is propelled by hybrid work environments, SaaS sprawl, stringent regulatory compliance audits (SOC 2, ISO 27001, NIS2, HIPAA, GDPR), and zero-trust identity architectures.
+
+> 🧩 **Market Concentration & Competitive Landscape**: The sector displays **moderate fragmentation with strong consolidation at the core identity tier**. Massive ecosystem incumbents (notably Microsoft Entra ID and Okta) maintain concentrated, near-dominant market shares for foundational enterprise Single Sign-On (SSO) and directory federation. However, specialized sectors—including fine-grained access request governance (Lumos), employee graph lifecycle automation (Rippling), privileged access management (CyberArk), and deep enterprise governance (SailPoint)—foster a highly competitive, fragmented ecosystem where modern, best-of-breed challengers actively capture emerging market segments.
+
+---
+
+## 🏢 SaaS & Hosted Identity Platforms
+
+The table below lists leading commercial SaaS and hosted platforms providing identity provisioning, directory synchronization, and role governance. The table is ranked by company scale (market capitalization or latest enterprise valuation, descending).
+
+| Company / Product 🏷️ | Market Cap / Valuation 💰 | Starting Tier Pricing 💵 | Free Tier / Free Trial Limits ⏱️ | Key Provisioning Capabilities 🎯 |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Entra ID](https://www.microsoft.com/en-us/security/business/microsoft-entra)** | **~$3.1 Trillion** *(Market Cap)* | **$3.00** /user/month *(Entra ID P1)*; P2 at $6.00 /user/month | **Free Forever Plan** (up to 50,000 objects/directory; supports SSO for up to 10 apps per user, basic directory sync) + **30-day Free Trial** for P2 premium features | Native Azure/M365 integration, HR-driven Lifecycle Workflows (joiner/mover/leaver), inbound/outbound SCIM 2.0 provisioning, and dynamic security group assignment. |
+| **[HubSpot Account & User Management](https://www.hubspot.com/)** | **~$31 Billion** *(Market Cap)* | **$15.00** /seat/month *(Starter Tier)*; Pro tier starts at $450/month for 5 seats | **Free Forever Plan** (up to 5 users with view/edit CRM access, standard predefined permissions, no SSO/SCIM) + **14-day Free Trial** for Professional | Internal CRM seat allocation, role presets (Super Admin, Sales, Marketing, Service), team partitioning, and SAML SSO / SCIM provisioning on Enterprise tier. |
+| **[CyberArk](https://www.cyberark.com/)** | **~$13.5 Billion** *(Market Cap)* | **$4.00** /user/month *(Workforce Identity SSO/MFA)*; PAM from ~$28.00 /target/month | **30-day Free Trial** (complete access to Identity Security Cloud features, up to 100 test user identities) | Privileged Access Management (PAM), zero-standing privilege enforcement, privileged account auto-discovery, and policy-driven role assignment. |
+| **[Rippling](https://www.rippling.com/)** | **~$13.5 Billion** *(Valuation)* | **$8.00** /user/month *(Base platform fee plus core modules)* | **Custom Interactive Product Sandbox** (Guided trial environment with pre-populated demo data, no permanent free tier) | Unified Employee Graph; triggers automated onboarding/offboarding across 650+ SaaS tools natively based on HR hire/fire dates; zero-touch app role provisioning. |
+| **[Okta](https://www.okta.com/)** | **~$12.8 Billion** *(Market Cap)* | **$2.00** /user/month *(Single Sign-On)*; Lifecycle Management starts at **$4.00** /user/month | **30-day Free Trial** (full enterprise features including Universal Directory, SCIM provisioning workflows, up to 100 users) | Cloud identity gold standard; pre-built SCIM connectors for 7,000+ cloud applications, Okta Workflows for custom business logic, and Identity Governance certifications. |
+| **[SailPoint](https://www.sailpoint.com/)** | **~$6.9 Billion** *(Acquired by Thoma Bravo)* | **$5.00** /user/month *(Atlas IGA starting suite, billed annually)* | **30-day Guided POC Trial** (available for verified enterprise IT accounts with full access to Identity Security Cloud) | Enterprise Identity Governance and Administration (IGA), AI-driven role mining, segregation-of-duties (SoD) policies, and automated compliance access certification. |
+| **[Ping Identity](https://www.pingidentity.com/)** | **~$2.8 Billion** *(Acquired by Thoma Bravo, merged with ForgeRock)* | **$3.00** /user/month *(PingOne Workforce Essentials)*; advanced tiers at $5.00 /user/month | **30-day Free Trial** (PingOne Cloud Platform, full workforce directory, SSO and provisioning engine for up to 50 users) | High-scale workforce federation, PingOne DaVinci orchestration canvas, inbound/outbound SCIM connectors, and continuous risk-based access evaluation. |
+| **[JumpCloud](https://jumpcloud.com/)** | **~$2.6 Billion** *(Valuation)* | **$9.00** /user/month *(Core Identity package)*; Platform Plus at $18.00 /user/month | **Free Forever Plan** (Full platform features completely free for up to **10 users and 10 devices**, includes 10 days of premium 24/7 support) | Open Directory Platform unifying Mac, Windows, Linux, cloud identity, LDAP, RADIUS, and SCIM-driven SaaS app provisioning in a single pane of glass. |
+| **[OneLogin](https://www.onelogin.com/)** | **~$1.5 Billion** *(Part of One Identity)* | **$4.00** /user/month *(Advanced Identity with Directory Sync)* | **30-day Free Trial** (complete access to SmartFactor Authentication, Universal Directory, and automated user provisioning) | Real-time Active Directory/LDAP bi-directional sync, rule-based role mappings, automated provisioning to popular SaaS apps, and continuous session management. |
+| **[Lumos](https://www.lumos.com/)** | **~$250 Million** *(Valuation)* | **$3.50** /user/month *(App Store & Auto-Request Management)* | **14-day Free Sandbox Trial** (full Slack/Teams self-service app store, automated workflows, and entitlement review engine) | Internal self-service app store for employees, automated access request approval chains in Slack/Teams, time-bound access, and automatic deprovisioning upon role change. |
+
+---
+
+## 💻 Open-Source Identity & Governance Repositories
+
+The open-source ecosystem provides modular building blocks—from full-featured OpenID Connect/OAuth2 and SCIM servers to comprehensive Identity Governance and Administration (IGA) engines. 
+
+The repositories below are ranked by GitHub Star count (descending) and feature live social badges linking to their stargazers page:
+
+| Repository / Project 📦 | Stars ⭐ | Primary License ⚖️ | Description & Architecture Highlights 💡 |
+| :--- | :--- | :--- | :--- |
+| **[Keycloak](https://github.com/keycloak/keycloak)** | [![GitHub stars](https://img.shields.io/github/stars/keycloak/keycloak?style=social&color=white)](https://github.com/keycloak/keycloak/stargazers) | Apache-2.0 | The de facto standard in open-source IAM backed by Red Hat. Supports OAuth 2.0, OpenID Connect, SAML 2.0, LDAP federation, fine-grained RBAC, and native SCIM 2.0 server capabilities for receiving users from Entra ID and Okta. |
+| **[Authelia](https://github.com/authelia/authelia)** | [![GitHub stars](https://img.shields.io/github/stars/authelia/authelia?style=social&color=white)](https://github.com/authelia/authelia/stargazers) | Apache-2.0 | Lightweight authentication and authorization server acting as an identity verification companion for reverse proxies (Traefik, NGINX, Caddy). Features 2FA (TOTP, WebAuthn/FIDO2), access control lists, and OpenID Connect provider support. |
+| **[Authentik](https://github.com/goauthentik/authentik)** | [![GitHub stars](https://img.shields.io/github/stars/goauthentik/authentik?style=social&color=white)](https://github.com/goauthentik/authentik/stargazers) | GPL-3.0 | Modern, Python/Go-powered open-source identity provider emphasizing workflow flexibility. Features built-in inbound and outbound SCIM protocol support, custom enrollment flows, user lifecycle stages, and LDAP proxy functionality. |
+| **[Zitadel](https://github.com/zitadel/zitadel)** | [![GitHub stars](https://img.shields.io/github/stars/zitadel/zitadel?style=social&color=white)](https://github.com/zitadel/zitadel/stargazers) | Apache-2.0 | Cloud-native, event-sourced identity platform built in Go. Optimized for multi-tenancy, B2B SaaS role delegation, audit trails, and fine-grained authorization with built-in machine-to-machine (M2M) identity management. |
+| **[Casdoor](https://github.com/casdoor/casdoor)** | [![GitHub stars](https://img.shields.io/github/stars/casdoor/casdoor?style=social&color=white)](https://github.com/casdoor/casdoor/stargazers) | Apache-2.0 | UI-first identity and access management platform supporting OAuth 2.0, OIDC, SAML, and CAS. Ships with an RFC 7643/7644 SCIM 2.0 server for synchronization, Casbin-powered RBAC/ABAC authorization, and an MCP server for AI agents. |
+| **[Ory Kratos](https://github.com/ory/kratos)** | [![GitHub stars](https://img.shields.io/github/stars/ory/kratos?style=social&color=white)](https://github.com/ory/kratos/stargazers) | Apache-2.0 | API-first, headless identity and user management system written in Go. Adheres to zero-trust principles, supporting self-service registration, profile management, MFA, and pluggable identity schema validation. |
+| **[Ory Keto](https://github.com/ory/keto)** | [![GitHub stars](https://img.shields.io/github/stars/ory/keto?style=social&color=white)](https://github.com/ory/keto/stargazers) | Apache-2.0 | Open-source implementation of Google's Zanzibar paper. High-performance, scalable relationship-based access control (ReBAC) and permission management system designed for ultra-low latency authorization checks. |
+| **[WSO2 Identity Server](https://github.com/wso2/product-is)** | [![GitHub stars](https://img.shields.io/github/stars/wso2/product-is?style=social&color=white)](https://github.com/wso2/product-is/stargazers) | Apache-2.0 | Enterprise-grade IAM recognized as a Digital Public Good. Powers identity for over 1 billion users globally; offers comprehensive SCIM 2.0 inbound/outbound provisioning, adaptive authentication, and fine-grained RBAC administration. |
+| **[midPoint (Evolveum)](https://github.com/Evolveum/midpoint)** | [![GitHub stars](https://img.shields.io/github/stars/Evolveum/midpoint)](https://github.com/Evolveum/midpoint/stargazers) | Apache-2.0 | The preeminent open-source Identity Governance and Administration (IGA) platform. Provides comprehensive provisioning connectors, organizational hierarchy role modeling, automated lifecycle events, access reviews, and audit trails. |
+| **[Apache Syncope](https://github.com/apache/syncope)** | [![GitHub stars](https://img.shields.io/github/stars/apache/syncope?style=social&color=white)](https://github.com/apache/syncope/stargazers) | Apache-2.0 | Top-level Apache project dedicated to digital identity management and enterprise provisioning. Features bi-directional identity reconciliation, ConnId connector architecture, end-user self-service, and role entitlement synchronization. |
+| **[GoSCIM](https://github.com/arturoeanton/goscim)** | [![GitHub stars](https://img.shields.io/github/stars/arturoeanton/goscim?style=social&color=white)](https://github.com/arturoeanton/goscim/stargazers) | Apache-2.0 | Ultra-fast, lightweight SCIM 2.0 server implemented in Go. Features dynamic schema loading via JSON, fine-grained attribute-level permissioning, ETag concurrency controls, and high-throughput Couchbase storage integration. |
+| **[hr-onboarding-automation](https://github.com/suresh-1001/hr-onboarding-automation)** | [![GitHub stars](https://img.shields.io/github/stars/suresh-1001/hr-onboarding-automation?style=social&color=white)](https://github.com/suresh-1001/hr-onboarding-automation/stargazers) | MIT | Reference orchestration pipeline wiring HRIS (BambooHR/HiBob) to Google Workspace, Microsoft Entra ID, Slack, and Jira using declarative YAML role definitions, least-privilege policies, and cryptographically verifiable audit logs. |
+| **[Hanzo IAM](https://github.com/hanzoai/iam)** | [![GitHub stars](https://img.shields.io/github/stars/hanzoai/iam?style=social&color=white)](https://github.com/hanzoai/iam/stargazers) | Apache-2.0 | AI-first identity and access management system with WebAuthn, OAuth 2.1, SCIM provisioning endpoints, and specialized Agent-to-Agent (A2A) Model Context Protocol (MCP) identity gateway capabilities. |
+
+---
+
+## 🛠️ Architectural Patterns: Building vs. Buying
+
+When designing user provisioning and role management architectures, engineering teams encounter distinct tradeoffs across implementation paradigms:
+
+```mermaid
+flowchart TD
+    HR[HR Information System\nWorkday / BambooHR / Rippling] -->|Employee Event Trigger| ORCH{Provisioning Engine}
+    
+    subgraph SaaS Route ["Commercial Turnkey SaaS"]
+        ORCH -->|Pre-built SCIM 2.0 Connectors| S1[Okta / Entra ID Workflows]
+        S1 --> GSuite[Google Workspace]
+        S1 --> Slack[Slack Enterprise]
+        S1 --> Sales[Salesforce / AWS IAM]
+    end
+
+    subgraph OSS Route ["Self-Hosted / Open-Source Stack"]
+        ORCH -->|Event Webhook / Message Queue| M1[midPoint IGA / Custom Pipeline]
+        M1 -->|SCIM Server & ConnId Connectors| K1[Keycloak / Casdoor / Syncope]
+        K1 --> LdapApps[LDAP / OIDC Web Apps]
+        M1 --> Downstream[Internal APIs & Databases]
+    end
+```
+
+### 1. The Core Ingestion Tier (Identity Provider)
+- **Keycloak**, **Casdoor**, or **Authentik** act as the identity broker and SCIM ingestion point. They ingest user objects and enforce authentication (SSO/MFA) and coarse-grained role assignment.
+
+### 2. The Governance Tier (IGA)
+- **midPoint** and **Apache Syncope** provide the complex role synchronization, entitlement reconciliations, segregation-of-duties (SoD), and access certification required by enterprise auditors.
+
+### 3. The Connector Ecosystem Gap
+- **Commercial SaaS advantages**: Solutions like Okta, Entra ID, and Rippling invest thousands of engineering hours maintaining pre-built API connectors to thousands of third-party SaaS vendors.
+- **Open-source strategy**: Teams utilizing open-source tools typically deploy **midPoint connectors (ConnId)** or custom Python/Go automation scripts (patterned after `hr-onboarding-automation`) to push changes across heterogeneous endpoints.
+
+---
+
+## 🤝 How to Contribute
+
+We welcome additions, corrections, and improvements from identity security practitioners, IT architects, and open-source contributors!
+
+1. 🍴 **Fork the repository** to your GitHub account.
+2. 🌿 **Create a descriptive feature branch**: `git checkout -b add-identity-tool`.
+3. 📝 **Add or update the platform**:
+   - For SaaS: Ensure you specify starting tier pricing, free plan / trial details, and company valuation/revenue metrics.
+   - For Open-Source: Ensure you provide the official repo link, accurate license, and verified GitHub star badge.
+4. 🚀 **Submit a Pull Request (PR)** with a clear rationale and links to official documentation or pricing pages.
+
+---
+
+## ⚖️ Disclaimer & Security Advisory
+
+- This curated list is maintained for educational, architectural, and informational purposes. Mention does not constitute commercial endorsement.
+- **Security Warning**: Incomplete deprovisioning workflows and orphaned access tokens represent one of the leading vectors for identity-based enterprise compromises. Always implement robust joiner-mover-leaver verification and automated access reconciliation.
+- All trademarks, logos, and brand names belong to their respective corporate owners.
+
+---
+
+<div align="center">
+  <sub>Maintained with ❤️ for Identity Architects, CISOs, DevOps Engineers, and IT Administrators worldwide.</sub>
+</div>
