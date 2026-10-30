@@ -8,10 +8,12 @@
   <strong>Curated Directory of Identity Lifecycle Automation, SCIM 2.0 Provisioning, RBAC/ABAC Governance & Self-Hosted IAM Solutions</strong>
 </p>
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-User-Provisioning-Role-Management/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-User-Provisioning-Role-Management/blob/main/README.md#how-to-contribute)
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
 </div>
 
@@ -24,6 +26,8 @@
 - [💻 Open-Source Identity & Governance Repositories](#-open-source-identity--governance-repositories)
 - [🛠️ Architectural Patterns: Building vs. Buying](#-architectural-patterns-building-vs-buying)
 - [🤝 How to Contribute](#-how-to-contribute)
+- [⭐ Star History](#-star-history)
+- [💖 Support & Sponsorship](#-support--sponsorship)
 - [⚖️ Disclaimer & Security Advisory](#-disclaimer--security-advisory)
 
 ---
@@ -135,6 +139,24 @@ We welcome additions, corrections, and improvements from identity security pract
    - For SaaS: Ensure you specify starting tier pricing, free plan / trial details, and company valuation/revenue metrics.
    - For Open-Source: Ensure you provide the official repo link, accurate license, and verified GitHub star badge.
 4. 🚀 **Submit a Pull Request (PR)** with a clear rationale and links to official documentation or pricing pages.
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-User-Provisioning-Role-Management&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-User-Provisioning-Role-Management&type=date&legend=top-left)
+
+---
+
+## 💖 Support & Sponsorship
+
+Thank you for exploring this curated repository! If you find this resource helpful for your architecture designs, IAM engineering, or compliance workflows, please consider showing your support:
+
+- ⭐ **Star the repository** to boost visibility for the community.
+- 🍴 **Fork and share** with fellow security engineers and IT architects.
+- ☕ **Buy a coffee / Sponsor**: If you'd like to support continued maintenance and curation of open security resources, consider sponsoring on GitHub:
+  
+  [![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github-sponsors&logoColor=white)](https://github.com/sponsors/ishandutta2007)
 
 ---
 
